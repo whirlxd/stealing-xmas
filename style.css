@@ -1,0 +1,291 @@
+@import url("https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&family=Roboto+Slab:wght@300;400;700&display=swap");
+
+:root {
+	--dark-green: #0b5d1e;
+	--light-green: #d0f0c0;
+	--red: #c41e3a;
+	--dark-red: #8b0000;
+	--gold: #ffd700;
+	--cream: #fffdd0;
+	--pine: #2c5545;
+	--berry: #8c001a;
+	--snow: #fffafa;
+	--silver: #c0c0c0;
+}
+
+body {
+	font-family: "Roboto Slab", serif;
+	background-color: var(--cream);
+	color: var(--dark-green);
+	line-height: 1.6;
+	margin: 0;
+	padding: 0;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M50 0 L100 50 L50 100 L0 50 Z' fill='%23C41E3A' fill-opacity='0.1'/%3E%3C/svg%3E");
+}
+
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: rgba(255, 253, 208, 0.9);
+	border-radius: 15px;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+header {
+	text-align: center;
+	padding: 40px 0;
+	background: linear-gradient(135deg, var(--dark-red), var(--red));
+	color: var(--cream);
+	border-bottom: 5px solid var(--gold);
+	border-radius: 15px 15px 0 0;
+	position: relative;
+	overflow: hidden;
+}
+
+header::before,
+header::after {
+	content: "";
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E%3Cpath d='M25 1L1 25l24 24 24-24L25 1zm0 22.1l-15.9 15.9L25 47l15.9-15.9L25 23.1z' fill='%23FFD700' fill-opacity='0.2'/%3E%3C/svg%3E");
+	z-index: 0;
+}
+
+header::before {
+	top: -100px;
+	left: -100px;
+	transform: rotate(30deg);
+}
+
+header::after {
+	bottom: -100px;
+	right: -100px;
+	transform: rotate(-30deg);
+}
+
+h1 {
+	font-family: "Mountains of Christmas", cursive;
+	font-size: 3em;
+	margin-bottom: 10px;
+	text-shadow: 2px 2px var(--dark-red);
+	position: relative;
+	z-index: 1;
+}
+
+h2 {
+	font-family: "Mountains of Christmas", cursive;
+	color: var(--red);
+	border-bottom: 2px solid var(--gold);
+	padding-bottom: 10px;
+}
+
+.sig {
+	font-style: italic;
+	text-align: center;
+	margin-bottom: 30px;
+	color: var(--dark-red);
+}
+
+.step {
+	background: linear-gradient(135deg, var(--light-green), var(--snow));
+	border: 2px solid var(--red);
+	border-radius: 10px;
+	padding: 20px;
+	margin-bottom: 20px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	position: relative;
+	overflow: hidden;
+}
+
+.step:hover {
+	transform: scale(1.02);
+	box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.step::before {
+	content: "";
+	position: absolute;
+	top: -10px;
+	left: -10px;
+	width: 40px;
+	height: 40px;
+	background: var(--red);
+	transform: rotate(45deg);
+}
+
+.step h3 {
+	color: var(--red);
+	margin-top: 0;
+}
+
+.tip {
+	background: linear-gradient(135deg, var(--gold), var(--silver));
+	border-left: 5px solid var(--berry);
+	color: var(--pine);
+	padding: 10px;
+	border-radius: 5px;
+	margin-top: 10px;
+	font-style: italic;
+}
+
+.lighting {
+	height: 20px;
+	background: repeating-linear-gradient(
+		to right,
+		var(--red) 0px,
+		var(--red) 10px,
+		var(--gold) 10px,
+		var(--gold) 20px,
+		var(--light-green) 20px,
+		var(--light-green) 30px,
+		var(--berry) 30px,
+		var(--berry) 40px
+	);
+	animation: twinkle 1s infinite;
+}
+
+@keyframes twinkle {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
+	}
+}
+
+.mistletoe {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 2em;
+	transform: rotate(45deg);
+}
+
+.grinch-image {
+	width: 100%;
+	max-width: 300px;
+	height: auto;
+	margin: 20px auto;
+	display: block;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.emojiloop {
+	position: fixed;
+	top: 20px;
+	right: -100px;
+	font-size: 2em;
+	animation: fly-across 20s linear infinite;
+}
+
+@keyframes fly-across {
+	from {
+		right: -100px;
+	}
+	to {
+		right: calc(100% + 100px);
+	}
+}
+
+footer {
+	text-align: center;
+	padding: 20px;
+	background: linear-gradient(135deg, var(--dark-red), var(--red));
+	color: var(--cream);
+	border-top: 5px solid var(--gold);
+	margin-top: 40px;
+	border-radius: 0 0 15px 15px;
+	position: relative;
+	overflow: hidden;
+}
+
+footer::before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 50px;
+	background: linear-gradient(135deg, var(--snow) 25%, transparent 25%) -50px 0,
+		linear-gradient(225deg, var(--snow) 25%, transparent 25%) -50px 0,
+		linear-gradient(315deg, var(--snow) 25%, transparent 25%),
+		linear-gradient(45deg, var(--snow) 25%, transparent 25%);
+	background-size: 100px 100px;
+	background-color: var(--pine);
+	opacity: 0.3;
+}
+
+.evil {
+	font-size: 2em;
+	animation: grinch-smile 2s infinite;
+}
+
+@keyframes evil {
+	0%,
+	100% {
+		transform: scaleX(1);
+	}
+	50% {
+		transform: scaleX(1.2);
+	}
+}
+
+.snowflake {
+	color: var(--snow);
+	text-shadow: 0 0 5px var(--silver);
+	font-size: 1.5em;
+	position: fixed;
+	top: -10%;
+	animation: fall linear infinite, sway ease-in-out infinite alternate;
+	pointer-events: none;
+}
+
+@keyframes fall {
+	to {
+		transform: translateY(100vh) rotate(360deg);
+	}
+}
+
+@keyframes sway {
+	from {
+		transform: translateX(-5px);
+	}
+	to {
+		transform: translateX(5px);
+	}
+}
+
+.gift-box {
+	width: 50px;
+	height: 50px;
+	background-color: var(--red);
+	position: relative;
+	margin: 20px auto;
+	transform: rotate(45deg);
+}
+
+.gift-box::before,
+.gift-box::after {
+	content: "";
+	position: absolute;
+	background-color: var(--gold);
+}
+
+.gift-box::before {
+	width: 100%;
+	height: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.gift-box::after {
+	width: 10px;
+	height: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+}
